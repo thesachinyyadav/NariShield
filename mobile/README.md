@@ -1,17 +1,32 @@
 # NariShield Mobile (Flutter)
 
-This folder is reserved for the Flutter application.
+This module contains the first Flutter MVP scaffold.
 
-## Planned MVP screens
+## Implemented
 
-- Onboarding + consent
-- Bracelet pairing (simulated BLE)
-- Emergency incident active screen
-- Trusted contacts
-- Incident history
+- Home screen with incident list
+- Pull-to-refresh via app bar action
+- Demo `Trigger SOS` action calling backend trigger endpoint
+- Basic incident rendering (status, device, battery, GPS)
 
-## Planned integration
+## Run
 
-- Backend base URL: `http://localhost:4000`
-- Incident trigger API: `POST /api/incidents/trigger`
-- Incident list API: `GET /api/incidents`
+```bash
+flutter pub get
+flutter run
+```
+
+## Backend API dependency
+
+- Base URL configured in `lib/screens/home_screen.dart`
+- Current default: `http://localhost:4000`
+
+If using Android emulator, replace with `http://10.0.2.2:4000`.
+
+## Next mobile milestones
+
+- Authentication and session handling
+- Consent + onboarding screens
+- Bracelet pairing flow (BLE)
+- Evidence capture and upload workflow
+- Trusted contacts and notifications
